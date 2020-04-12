@@ -5,6 +5,8 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  /*解决换行样式问题 强制页面大小*/
+  /*min-width: 1366px;*/
 }
 
 .el-breadcrumb {
