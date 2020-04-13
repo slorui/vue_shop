@@ -11,7 +11,7 @@
 <!--      添加角色按钮区域-->
       <el-row>
 <!--        pull左移 push右移动-->
-        <el-col :pull="11">
+        <el-col :pull="11" class="top-button">
           <el-button type="primary" >添加角色</el-button>
         </el-col>
       </el-row>
@@ -72,10 +72,10 @@
       title="分配权限"
       :visible.sync="setRightDialogVisible"
       width="50%" @close="setRightDialogClosed" >
-<!--      树形控件 props是展示的属性-->
+<!--      添加分类的表单-->
       <el-tree :data="rightsList" :props="treeProps" show-checkbox
-        node-key="id" default-expand-all :default-checked-keys="defKeys"
-               ref="treeRef"></el-tree>
+        node-key="id" ref="treeRef" default-expand-all :default-checked-keys="defKeys">
+      </el-tree>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="allotRights">确 定</el-button>
         <el-button @click="setRightDialogVisible = false">取 消</el-button>
@@ -191,5 +191,8 @@ export default {
   .vcenter {
     display: flex;
     align-items: center;
+  }
+  .top-button {
+    margin-left: 9px;
   }
 </style>

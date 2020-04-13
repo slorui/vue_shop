@@ -6,7 +6,7 @@ body,
   margin: 0;
   padding: 0;
   /*解决换行样式问题 强制页面大小*/
-  /*min-width: 1366px;*/
+  min-width: 1080px;
 }
 
 .el-breadcrumb {
@@ -22,4 +22,7 @@ body,
 }
 .el-pagination {
   margin-top: 15px;
+}
+.el-cascader-menu {
+  height: 300px;
 }
