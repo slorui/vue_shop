@@ -11,7 +11,7 @@
     <el-card >
       <!--      添加分类按钮区域-->
       <el-row>
-        <el-col :pull="11" class="top-button">
+        <el-col >
           <el-button type="primary" @click="showAddCateDialog" >添加分类</el-button>
         </el-col>
       </el-row>
@@ -73,7 +73,7 @@
       </span>
     </el-dialog>
 <!--    编辑分类的对话框-->
-    <el-dialog title="修改分类" :visible="edidCateDialogVisible" width="50%"
+    <el-dialog title="修改分类" :visible="editCateDialogVisible" width="50%"
       @close="editCateDialogClosed">
       <el-form :model="editCateForm" :rules="editCateFormRules" ref="editCateFormRef"
         label-width="100px">
@@ -83,7 +83,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="editCate">确 定</el-button>
-        <el-button @click="edidCateDialogVisible = false">取 消</el-button>
+        <el-button @click="editCateDialogVisible = false">取 消</el-button>
       </span>
     </el-dialog>
   </div>
@@ -162,7 +162,7 @@ export default {
       // 选中的父级分类Id
       selectedKeys: [],
       // 控制修改分类的对话框的显示与隐藏
-      edidCateDialogVisible: false,
+      editCateDialogVisible: false,
       // 编辑分类的表单数据
       editCateForm: {
         // 分类id
@@ -255,12 +255,12 @@ export default {
       if (res.meta.status !== 200) return this.$message.error('获取分类信息失败！')
       console.log(res.data)
       this.editCateForm = res.data
-      this.edidCateDialogVisible = true
+      this.editCateDialogVisible = true
     },
     // 关闭编辑用户的对话框
     editCateDialogClosed () {
       this.editCateForm.cat_name = ''
-      this.edidCateDialogVisible = false
+      this.editCateDialogVisible = false
     },
     // 编辑确定 修改分类
     async editCate () {
@@ -296,9 +296,6 @@ export default {
 <style lang="less" scoped>
   .treeTable {
     margin-top: 15px;
-  }
-  .top-button {
-    margin-left: 9px;
   }
   .el-cascader {
     width: 100%;

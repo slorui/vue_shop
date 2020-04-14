@@ -11,7 +11,7 @@
 <!--      添加角色按钮区域-->
       <el-row>
 <!--        pull左移 push右移动-->
-        <el-col :pull="11" class="top-button">
+        <el-col>
           <el-button type="primary" >添加角色</el-button>
         </el-col>
       </el-row>
@@ -191,8 +191,5 @@ export default {
   .vcenter {
     display: flex;
     align-items: center;
-  }
-  .top-button {
-    margin-left: 9px;
   }
 </style>
